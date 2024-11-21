@@ -13,6 +13,7 @@ class Yarn(pygame.sprite.Sprite):
     def motion(self):
         pass
     #Need to integrate button with the hook; how do I make it look as if its moving?
+    #I assume I need to use blitzing 
         
     def save_state(self):
         yarn_state = self.__dict__
