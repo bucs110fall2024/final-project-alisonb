@@ -22,6 +22,7 @@ class Controller:
       #update data
 
       #redraw
+      #   Buttons are the menu (make so it goes to your game loop)
       
   def gameloop(self):
       #event loop
