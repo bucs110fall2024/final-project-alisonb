@@ -1,7 +1,7 @@
 import pygame
 
 class Button(pygame.sprite.Sprite):
-    def __init__(self, x=0, y=0, width=175, height=75, color=(200, 0, 200), text= "Stitch"):
+    def __init__(self, x=0, y=0, width=175, height=75, color=(200, 0, 200), text= " "):
         super().__init__()
         self.image = pygame.Surface((width, height))
         self.rect = self.image.get_rect()

@@ -5,7 +5,7 @@ class Yarn(pygame.sprite.Sprite):
     def __init__(self, image, x, y):
          super().__init__()
          #Need to figure out how to load an image (image yet to be loaded)
-         self.image = pygame.image.load(f‘/assets/{name}.png’)
+         self.image = pygame.image.load(f‘/assets/{ball-of-yarn.png’)
          self.rect = self.image.get_rect()
          self.rect.x = 0
          self.rect.y = 0
@@ -13,7 +13,7 @@ class Yarn(pygame.sprite.Sprite):
     def motion(self):
         pass
     #Need to integrate button with the hook; how do I make it look as if its moving?
-    #I assume I need to use blitzing 
+    #I assume I need to use blitsing 
         
     def save_state(self):
         yarn_state = self.__dict__
