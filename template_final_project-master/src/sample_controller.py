@@ -11,12 +11,19 @@ class Controller:
     
   def mainloop(self):
     #select state loop
-    
+    while True:
+      for event in pygame.events.get():
+        if event.type == pygame.Quit:
+          pygame.quit()
+          exit()
+        #elif event.type == pygame.get_pressed():
+					#pass
+
   
   ### below are some sample loop states ###
 
   def menuloop(self):
-    
+    pass
       #event loop
 
       #update data
@@ -25,6 +32,7 @@ class Controller:
       #   Buttons are the menu (make so it goes to your game loop)
       
   def gameloop(self):
+    pass
       #event loop
 
       #update data
@@ -32,6 +40,7 @@ class Controller:
       #redraw
     
   def gameoverloop(self):
+    pass
       #event loop
 
       #update data
