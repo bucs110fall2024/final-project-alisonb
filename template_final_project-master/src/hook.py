@@ -13,8 +13,7 @@ class Hook(pygame.sprite.Sprite):
         pass
     #I'm confused as to how to link the hook and the stitch 
 
-
-        
+ 
 #Need to integrate button and yarn in the motion
 # Yarn is an instance varibale of hook (so that they can move together); how would I do that?
 #How is it moving?
