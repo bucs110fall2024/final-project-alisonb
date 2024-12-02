@@ -1,6 +1,4 @@
 import pygame
-import json
-import hook
 
 class Stitch(pygame.sprite.Sprite):
     def __init__(self,image= f"/assets/single-crochet-circle.jpg"):
@@ -14,19 +12,8 @@ class Stitch(pygame.sprite.Sprite):
     def add_stit(self):
         if self.is_added:
             self.rect.x += 1
-            self.rect.y += 2
-        #Connect to the buttons; use an if statement so it'll run one, two, or three  
+            self.rect.y += 2  
     
     #Every time the player presses the button, it'll "add" and shift
     #the stitch in the "magic ring", then it'll come together at the end
         
-    #How do I get the positioning for each stich? Has to correspond with the hook
-     
-    def save_state(self):
-        stitch_state = self.__dict__
-        fptr = open("assets/last_state.json", "w")
-        json.dump(fptr, stitch_state)
-        
-    def load_state(self):
-        fptr = open("assets/last_state.json")
-        self.__dict__ = json.loads(fptr)
