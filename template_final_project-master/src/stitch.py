@@ -1,4 +1,5 @@
 import pygame
+import json
 
 class Stitch(pygame.sprite.Sprite):
     def __init__(self,image= f"/assets/single-crochet-circle.jpg"):
@@ -18,3 +19,11 @@ class Stitch(pygame.sprite.Sprite):
         
     #How do I get the positioning for each stich? Has to correspond with the hook
     #Could you use two images in the class? 
+    def save_state(self):
+        yarn_state = self.__dict__
+        fptr = open("assets/last_state.json", "w")
+        json.dump(fptr, yarn_state)
+        
+    def load_state(self):
+        fptr = open("assets/last_state.json")
+        self.__dict__ = json.loads(fptr)
