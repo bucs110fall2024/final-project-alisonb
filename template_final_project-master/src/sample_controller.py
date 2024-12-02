@@ -1,5 +1,5 @@
 import pygame
-#import src.button import Button
+import Button
 #import src.yarn import Yarn
 #import src.hook import Hook
 #import src.stitch import Stitch
@@ -11,6 +11,10 @@ class Controller:
     pygame.init()
     pygame.event.pump()
     self.screen = pygame.display.set_mode()
+    
+    chain_one = Button(color = "blue", text = "Chain 1")
+    double_stitch = Button(color = "green", text = "Double")
+    treble_stitch = Button(color = "pink", text = "Treble")
     #Haven't finished this; have to include the models
     
   def mainloop(self):
