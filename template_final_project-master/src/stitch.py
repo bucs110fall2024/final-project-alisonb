@@ -1,5 +1,6 @@
 import pygame
 import json
+import hook
 
 class Stitch(pygame.sprite.Sprite):
     def __init__(self,image= f"/assets/single-crochet-circle.jpg"):
