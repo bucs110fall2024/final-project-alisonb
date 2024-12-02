@@ -1,7 +1,8 @@
 import pygame
-import yarn
-import hook
-import stitch
+import src.button import Button
+#import src.yarn import Yarn
+#import src.hook import Hook
+#import src.stitch import Stitch
 
 class Controller:
   
@@ -21,18 +22,21 @@ class Controller:
           exit()
         #elif event.type == pygame.get_pressed():
 					#pass
+     #These are for the buttons
 
-  
   ### below are some sample loop states ###
 
+#This is for start and quit 
   def menuloop(self):
-    pass
       #event loop
-
+      pygame.display.set_caption("Menu")
+      
+      while True:
+        pass
+        
       #update data
 
       #redraw
-      #   Buttons are the menu (make so it goes to your game loop)
       
   def gameloop(self):
     pass
