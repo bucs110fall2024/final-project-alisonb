@@ -5,14 +5,12 @@ class Hook(pygame.sprite.Sprite):
     def __init__(self, image, x, y, yarn):
         super().__init__()
         #Need to figure out how to upload image
-        self.image = pygame.image.load(f‘/assets/{name}.png’)
-		self.rect = self.image.get_rect()
-		self.rect.x = 0
-		self.rect.y = 0
-        self.yarn = yarn.motion()
+        self.image = pygame.image.load(f"/assets/hook-img.jpg")
+        self.rect = self.image.get_rect()
+        self.rect.x = 0
+        self.rect.y = 0
 
-
-    def move_with_yarn(self):
+    def motion_with_stich(self):
         pass 
 
 
