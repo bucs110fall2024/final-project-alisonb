@@ -1,5 +1,5 @@
 import pygame
-import src.button import Button
+#import src.button import Button
 #import src.yarn import Yarn
 #import src.hook import Hook
 #import src.stitch import Stitch
@@ -28,11 +28,12 @@ class Controller:
 
 #This is for start and quit 
   def menuloop(self):
+      pass
       #event loop
-      pygame.display.set_caption("Menu")
+      #pygame.display.set_caption("Menu")
       
-      while True:
-        pass
+      #while True:
+        #pass
         
       #update data
 

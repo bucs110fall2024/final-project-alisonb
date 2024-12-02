@@ -23,9 +23,9 @@ class Stitch(pygame.sprite.Sprite):
     #How do I get the positioning for each stich? Has to correspond with the hook
      
     def save_state(self):
-        yarn_state = self.__dict__
+        stitch_state = self.__dict__
         fptr = open("assets/last_state.json", "w")
-        json.dump(fptr, yarn_state)
+        json.dump(fptr, stitch_state)
         
     def load_state(self):
         fptr = open("assets/last_state.json")
