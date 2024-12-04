@@ -32,9 +32,9 @@
 
 ### Features
 
-1. << Feature 1 >>
-2. << Feature 2 >>
-3. << Feature 3 >>
+1. << Menu - Start Button >>
+2. << Game Event - Buttons that corres>>
+3. << Instructions (For the project)>>
 4. << Feature 4 >>
 5. << Feature 5 >>
 
@@ -44,8 +44,11 @@
 
 ## ATP
 
-| Step                 |Procedure             |Expected Results                   |
-|----------------------|:--------------------:|----------------------------------:|
-|  1                   | Run Counter Program  |GUI window appears with count = 0  |
-|  2                   | click count button   | display changes to count = 1      |
+| Step                        |Procedure             |Expected Results                   |
+|---------------------------- |:--------------------:|----------------------------------:|
+|1 Press Start Button         | Run Counter Program  |GUI window appears with count = 0  |
+|2 Click MR Button            | click count button   | display changes to count = 1      |
+|3 Click Chain 1 Button       | 
+|4 Click Double Stitch Button |
+|5 Click Treble Stitch Button |
 etc...

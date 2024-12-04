@@ -16,5 +16,7 @@ class Hook(pygame.sprite.Sprite):
 
 
 #Need to integrate button and yarn in the motion
-# Yarn is an instance varibale of hook (so that they can move together); how would I do that?
-#How is it moving?
+
+#pass coordinates of the needle
+
+#Should the needle know where the stitch is? (Either in the control or as a method); how would I pass the coordinates

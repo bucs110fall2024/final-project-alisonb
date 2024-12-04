@@ -21,7 +21,7 @@ class Controller:
     self.treble_stitch = Button(color = (0,128,128), text = "Treble") #Aqua    
     
     self.stitch = Stitch()
-    self.user = Hook(self.stitch)
+    self.user = Hook(0,0)
     self.sprites = pygame.sprite.Group((self.stitch))
     
     self.state = "START"
@@ -79,6 +79,7 @@ class Controller:
             if self.treble_stitch:
               for i in range(3):
                 Stitch.add_stit
+                
               
       #Do I have to use collide or collision so that its noticed by the user pressing on it? 
       

@@ -14,6 +14,10 @@ class Stitch(pygame.sprite.Sprite):
         if self.is_added:
             self.rect.x += 1
             self.rect.y += 2  
+            
+    def move(self,x,y):
+            self.rect.x = x
+            self.rect.y = y
     
     #Every time the player presses the button, it'll "add" and shift
     #the stitch in the "magic ring", then it'll come together at the end
