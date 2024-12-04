@@ -15,12 +15,12 @@ class Controller:
     self.screen = pygame.display.set_mode()
     self.width, self.height = pygame.display.get_window_size()
     
-    magic_ring = Button(color = "gold", text = "MR")
-    chain_one = Button(color = "blue", text = "Chain 1")
-    double_stitch = Button(color = "green", text = "Double")
-    treble_stitch = Button(color = "pink", text = "Treble")
-    
     #Models
+    self.magic_ring = Button(color = "gold", text = "MR")
+    self.chain_one = Button(color = "blue", text = "Chain 1")
+    self.double_stitch = Button(color = "green", text = "Double")
+    self.treble_stitch = Button(color = "pink", text = "Treble")
+    
     self.user = Hook()
     self.ball_yarn = Yarn()
     self.stitch = Stitch()
@@ -63,6 +63,7 @@ class Controller:
                     exit()
           #elif event.type == 
       #This is where the if statements for the button happen
+      #Do I have to use collide? 
       
       #update data
       def save_state(self):
