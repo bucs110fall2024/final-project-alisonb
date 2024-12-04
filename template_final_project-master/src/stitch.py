@@ -10,6 +10,7 @@ class Stitch(pygame.sprite.Sprite):
         is_added = None   
         
     def add_stit(self):
+        #Doc string (make sure to do)
         if self.is_added:
             self.rect.x += 1
             self.rect.y += 2  

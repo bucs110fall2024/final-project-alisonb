@@ -58,9 +58,13 @@ class Controller:
     
   def gameloop(self):
       #event loop
-      #Set the yarn as the background + divide the screen to the instructions and position the buttons
-      #Create rect, then the surface (canvas vs surface)
+      #Added image
+      background = pygame.image.load('ballyarnbk.jpg')
+      
       while self.state == "GAME":
+        self.screen.fill((0,0,0))
+        self.screen.blit(background, (0,0))
+        
         for event in pygame.event.get():
           if event.type == pygame.QUIT:
                     exit()
