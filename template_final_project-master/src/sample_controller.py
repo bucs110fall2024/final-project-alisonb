@@ -77,6 +77,8 @@ class Controller:
               
       #Do I have to use collide or collision so that its noticed by the user pressing on it? 
       
+      #event.pos into collision()  #HAVE TO USE IT 
+      
       #update data
       self.sprites.update()
       

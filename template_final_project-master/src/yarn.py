@@ -12,3 +12,5 @@ class Yarn():
 
 
 #Just make it into the background (make it into a surface)
+
+#Create rect, then the surface (canvas vs surface)
