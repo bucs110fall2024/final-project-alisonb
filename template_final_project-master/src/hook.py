@@ -8,7 +8,7 @@ class Hook(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = 0
         self.rect.y = 0
-        hook_moves = None
+        #hook_moves = None
 
     def motion_with_stitch(self):
         pass

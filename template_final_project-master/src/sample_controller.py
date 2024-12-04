@@ -21,9 +21,11 @@ class Controller:
     self.double_stitch = Button(color = "green", text = "Double")
     self.treble_stitch = Button(color = "pink", text = "Treble")
     
-    self.user = Hook()
+    
     self.ball_yarn = Yarn()
     self.stitch = Stitch()
+    self.user = Hook(self.stitch)
+    self.sprites = pygame.sprite.Group((self.stitch))
     
     self.state = "START"
     
@@ -56,33 +58,48 @@ class Controller:
       pygame.display.flip()
     
   def gameloop(self):
+    #DO I have to create a new menu or new screen, after the startloop?
       #event loop
       while self.state == "GAME":
         for event in pygame.event.get():
           if event.type == pygame.QUIT:
                     exit()
-          #elif event.type == 
+          elif event.type == pygame.MOUSEBUTTONDOWN:
+            if self.magic_ring:
+              Stitch.add_stit()
+            if self.chain_one:
+              Stitch.add_stit()
+            if self.double_stitch:
+              for i in range(2):
+                Stitch.add_stit()
+            if self.treble_stitch:
+              for i in range(3):
+                Stitch.add_stit
+              
       #This is where the if statements for the button happen
-      #Do I have to use collide? 
+      #Do I have to use collide or collision so that its noticed by the user pressing on it? 
+      # Do I just use mousebuttondown? Do I have to update the button class to check if the user clicks on it?
       
+      #update data
+      self.sprites.update()
+      
+      #redraw 
+      pygame.display.flip()
+          
+    
+  def saveprogressloop(self):
+  
+      #event loop
+
       #update data
       def save_state(self):
         stitch_state = self.__dict__
         fptr = open("assets/last_state.json", "w")
         json.dump(fptr, stitch_state)
-      #redraw 
-        def load_state(self):
-         fptr = open("assets/last_state.json")
-        self.__dict__ = json.loads(fptr)
-    
-  def saveprogressloop(self):
-    pass
-      #event loop
-
-      #update data
-
       #redraw
-      
+      def load_state(self):
+         fptr = open("assets/last_state.json")
+         self.__dict__ = json.loads(fptr)
       #Logic for the screen; jst a loop for each screen
       #Think of it has different states; what does it look like when its not doing anything
       #When the game is happening, etc 
