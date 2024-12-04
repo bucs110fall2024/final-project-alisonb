@@ -45,6 +45,7 @@ class Controller:
       self.menu = pygame_menu.Menu("Yarning for More!", self.width-20, self.height/2)
       self.menu.add.label("Click the button to start", max_char=-1, font_size=14)
       self.menu.add.button('Start', self.start_game, align = pygame_menu.locals.ALIGN_CENTER)
+      #Set the background
       
       #event loop
       while self.state == "START":
@@ -61,6 +62,7 @@ class Controller:
   def gameloop(self):
     #DO I have to create a new menu or new screen, after the startloop?
       #event loop
+      #Set the background + divide the screen to the instructions and position the buttons
       while self.state == "GAME":
         for event in pygame.event.get():
           if event.type == pygame.QUIT:

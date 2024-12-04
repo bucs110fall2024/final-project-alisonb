@@ -14,7 +14,8 @@
 
 << Give an overview of your project >>
 
-***    Crochet game: User uses buttons (following instructions provided)
+***    Crochet game: Player uses buttons 
+                (following instructions provided)
         to create their own mini crochet project (a heart)
 
 ## GUI Design
