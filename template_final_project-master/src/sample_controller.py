@@ -90,7 +90,7 @@ class Controller:
   def saveprogressloop(self):
   #Work on this
       #event loop
-
+      
       #update data
       def save_state(self):
         stitch_state = self.__dict__
