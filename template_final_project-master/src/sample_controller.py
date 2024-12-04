@@ -77,7 +77,7 @@ class Controller:
               
       #Do I have to use collide or collision so that its noticed by the user pressing on it? 
       
-      #event.pos into collision()  #HAVE TO USE IT 
+      #event.pos into collision()  #HAVE TO USE IT (in the controller; models don't have to know other models exist)
       
       #update data
       self.sprites.update()
