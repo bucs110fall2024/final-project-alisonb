@@ -37,6 +37,7 @@ class Controller:
        
      elif self.state == "GAME":
        self.gameloop()
+       self.saveprogressloop()
 
   ### below are some sample loop states ###
   
@@ -76,7 +77,6 @@ class Controller:
               for i in range(3):
                 Stitch.add_stit
               
-      #This is where the if statements for the button happen
       #Do I have to use collide or collision so that its noticed by the user pressing on it? 
       # Do I just use mousebuttondown? Do I have to update the button class to check if the user clicks on it?
       
@@ -100,9 +100,11 @@ class Controller:
       def load_state(self):
          fptr = open("assets/last_state.json")
          self.__dict__ = json.loads(fptr)
-      #Logic for the screen; jst a loop for each screen
-      #Think of it has different states; what does it look like when its not doing anything
-      #When the game is happening, etc 
       
-      #Stitch doesn't have to know about other stitches; the controller should worry
-      #Motto: "Worry about yourself"
+      
+#Logic for the screen; jst a loop for each screen
+#Think of it has different states; what does it look like when its not doing anything
+#When the game is happening, etc 
+      
+# Stitch doesn't have to know about other stitches; the controller should worry
+# Motto: "Worry about yourself"
