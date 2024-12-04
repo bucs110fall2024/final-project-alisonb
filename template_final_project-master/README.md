@@ -8,14 +8,14 @@
 
 << List team member names >>
 
-***
+*** Me, myself and I.
 
 ## Project Description
 
 << Give an overview of your project >>
 
 ***    Crochet game: User uses buttons (following instructions provided)
-        to create their own mini crochet project
+        to create their own mini crochet project (a heart)
 
 ## GUI Design
 

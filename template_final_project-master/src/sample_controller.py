@@ -1,4 +1,5 @@
 import pygame
+import pygame_menu
 import json
 from src.button import Button
 from src.yarn import Yarn
@@ -17,6 +18,8 @@ class Controller:
     chain_one = Button(color = "blue", text = "Chain 1")
     double_stitch = Button(color = "green", text = "Double")
     treble_stitch = Button(color = "pink", text = "Treble")
+    
+    self.state = "START"
     #Haven't finished this; have to include the models
     
   def mainloop(self):
@@ -31,7 +34,7 @@ class Controller:
 
   ### below are some sample loop states ###
   
-  def startloop(self): #where the player presses start
+  def startloop(self): #where the player presses start; will use pygame menu
       pass
       #event loop
       #pygame.display.set_caption("Menu")
@@ -74,3 +77,5 @@ class Controller:
       #Stitch doesn't have to know about other stitches; the controller should worry
       
       #Motto: "Worry about yourself"
+  
+  pygame.quit
