@@ -1,9 +1,9 @@
 import pygame
 
 class Stitch(pygame.sprite.Sprite):
-    def __init__(self,image= f"/assets/single-crochet-circle.jpg"):
+    def __init__(self, image = f"assets/single-crochet-circle.jpg"):
         super().__init__()
-        self.image = pygame.image.load(f"/assets/single-crochet-x.jpg")
+        self.image = pygame.image.load(f"assets/single-crochet-x.jpg")
         self.rect = self.image.get_rect()
         self.rect.x = 0 
         self.rect.y = 0

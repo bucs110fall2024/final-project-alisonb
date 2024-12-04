@@ -2,7 +2,6 @@ import pygame
 import pygame_menu
 import json
 from src.button import Button
-from src.yarn import Yarn
 from src.hook import Hook
 from src.stitch import Stitch
 
@@ -21,7 +20,6 @@ class Controller:
     self.double_stitch = Button(color = (255,165,0), text = "Double") #Orange
     self.treble_stitch = Button(color = (0,128,128), text = "Treble") #Aqua    
     
-    self.ball_yarn = Yarn()
     self.stitch = Stitch()
     self.user = Hook(self.stitch)
     self.sprites = pygame.sprite.Group((self.stitch))
@@ -39,8 +37,6 @@ class Controller:
        self.gameloop()
        self.saveprogressloop()
 
-  ### below are some sample loop states ###
-  
   def startloop(self): #where the player presses start; will use pygame menu
       self.menu = pygame_menu.Menu("Yarning for More!", self.width-20, self.height/2)
       self.menu.add.label("Click the button to start", max_char=-1, font_size=14)
@@ -61,9 +57,8 @@ class Controller:
         pygame.display.flip()
     
   def gameloop(self):
-    #DO I have to create a new menu or new screen, after the startloop?
       #event loop
-      #Set the background + divide the screen to the instructions and position the buttons
+      #Set the yarn as the background + divide the screen to the instructions and position the buttons
       while self.state == "GAME":
         for event in pygame.event.get():
           if event.type == pygame.QUIT:
@@ -81,7 +76,6 @@ class Controller:
                 Stitch.add_stit
               
       #Do I have to use collide or collision so that its noticed by the user pressing on it? 
-      # Do I just use mousebuttondown? Do I have to update the button class to check if the user clicks on it?
       
       #update data
       self.sprites.update()
