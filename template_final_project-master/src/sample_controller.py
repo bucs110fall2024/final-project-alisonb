@@ -59,6 +59,7 @@ class Controller:
   def gameloop(self):
       #event loop
       #Set the yarn as the background + divide the screen to the instructions and position the buttons
+      #Create rect, then the surface (canvas vs surface)
       while self.state == "GAME":
         for event in pygame.event.get():
           if event.type == pygame.QUIT:
