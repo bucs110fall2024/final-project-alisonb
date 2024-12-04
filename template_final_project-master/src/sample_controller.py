@@ -23,29 +23,27 @@ class Controller:
     #Models
     self.user = Hook()
     self.ball_yarn = Yarn()
-    self.stitches = Stitch()
+    self.stitch = Stitch()
     
     self.state = "START"
     
   def mainloop(self):
-    pass
     #select state loop (switches between the states)
-    #while True:
-      #for event in pygame.events.get():
-        #if event.type == pygame.Quit:
-          #pygame.quit()
-          #exit()
-        #elif event.type == pygame.get_pressed():
-					#pass
+    while True:
+     if self.state == "START":
+       self.startloop()
+       
+     elif self.state == "GAME":
+       self.gameloop()
 
   ### below are some sample loop states ###
   
   def startloop(self): #where the player presses start; will use pygame menu
-      #event loop
       self.menu = pygame_menu.Menu("Yarning for More!", self.width-20, self.height/2)
       self.menu.add.label("Click the button to start", max_char=-1, font_size=14)
       self.menu.add.button('Start', self.start_game, align = pygame_menu.locals.ALIGN_CENTER)
       
+      #event loop
       while self.state == "START":
         for event in pygame.event.get():
           if event.type == pygame.MOUSEBUTTONDOWN:
@@ -57,14 +55,13 @@ class Controller:
       self.menu.draw(self.screen)
       pygame.display.flip()
     
-    # 
   def gameloop(self):
       #event loop
       while self.state == "GAME":
         for event in pygame.event.get():
           if event.type == pygame.QUIT:
                     exit()
-          elif event.type == pass
+          #elif event.type == 
       #This is where the if statements for the button happen
       
       #update data

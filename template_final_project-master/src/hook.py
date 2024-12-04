@@ -1,5 +1,5 @@
 import pygame
-import stitch
+from src.stitch import Stitch
 
 class Hook(pygame.sprite.Sprite):
     def __init__(self, image, x, y, stitch):
@@ -11,7 +11,7 @@ class Hook(pygame.sprite.Sprite):
         hook_moves = None
 
     def motion_with_stitch(self):
-        if 
+        pass
     #I'm confused as to how to link the hook and the stitch 
 
  
