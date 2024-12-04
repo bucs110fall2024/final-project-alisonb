@@ -89,4 +89,3 @@ class Controller:
       #Stitch doesn't have to know about other stitches; the controller should worry
       
       #Motto: "Worry about yourself"
-  pygame.quit()
