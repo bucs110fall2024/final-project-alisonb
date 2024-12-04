@@ -1,7 +1,7 @@
 import pygame
 import json
 
-class Yarn(pygame.sprite.Sprite):
+class Yarn():
     def __init__(self, image, x, y):
          super().__init__()
          self.image = pygame.image.load(f"/assets/ball-of-yarn.png")
@@ -9,4 +9,6 @@ class Yarn(pygame.sprite.Sprite):
          self.rect.x = 0
          self.rect.y = 0
 
-#The yarn ball is an image (as of right now, its stationary)
+
+
+#Just make it into the background (make it into a surface)

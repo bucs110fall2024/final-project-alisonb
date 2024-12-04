@@ -16,11 +16,10 @@ class Controller:
     self.width, self.height = pygame.display.get_window_size()
     
     #Models
-    self.magic_ring = Button(color = "gold", text = "MR")
-    self.chain_one = Button(color = "blue", text = "Chain 1")
-    self.double_stitch = Button(color = "green", text = "Double")
-    self.treble_stitch = Button(color = "pink", text = "Treble")
-    
+    self.magic_ring = Button(color = (200,0,200), text = "MR") # Red
+    self.chain_one = Button(color = (0,255,0), text = "Chain 1") #Green
+    self.double_stitch = Button(color = (255,165,0), text = "Double") #Orange
+    self.treble_stitch = Button(color = (0,128,128), text = "Treble") #Aqua    
     
     self.ball_yarn = Yarn()
     self.stitch = Stitch()
@@ -31,7 +30,8 @@ class Controller:
     
   def mainloop(self):
     #select state loop (switches between the states)
-    while True:
+    running = True
+    while running:
      if self.state == "START":
        self.startloop()
        
@@ -45,19 +45,20 @@ class Controller:
       self.menu = pygame_menu.Menu("Yarning for More!", self.width-20, self.height/2)
       self.menu.add.label("Click the button to start", max_char=-1, font_size=14)
       self.menu.add.button('Start', self.start_game, align = pygame_menu.locals.ALIGN_CENTER)
-      #Set the background
+      #Add a background image
       
       #event loop
       while self.state == "START":
-        for event in pygame.event.get():
+        events = pygame.event.get()
+        for event in events:
           if event.type == pygame.MOUSEBUTTONDOWN:
             self.state = "GAME"
         
-      #update data
-      self.menu.update(pygame.event.get())
-      #redraw
-      self.menu.draw(self.screen)
-      pygame.display.flip()
+        #update data
+        self.menu.update(events)
+        #redraw
+        self.menu.draw(self.screen)
+        pygame.display.flip()
     
   def gameloop(self):
     #DO I have to create a new menu or new screen, after the startloop?
