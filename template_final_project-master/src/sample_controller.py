@@ -88,7 +88,7 @@ class Controller:
           
     
   def saveprogressloop(self):
-  
+  #Work on this
       #event loop
 
       #update data
@@ -105,5 +105,4 @@ class Controller:
       #When the game is happening, etc 
       
       #Stitch doesn't have to know about other stitches; the controller should worry
-      
       #Motto: "Worry about yourself"
