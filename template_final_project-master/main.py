@@ -1,5 +1,5 @@
 import pygame
-from src.sample_controller import Controller
+from src.controller import Controller
 
 def main():
     #Create an instance on your controller object

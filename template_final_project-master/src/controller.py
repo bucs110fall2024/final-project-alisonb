@@ -11,19 +11,18 @@ class Controller:
     #setup pygame data
     pygame.init()
     pygame.event.pump()
-    self.screen = pygame.display.set_mode()
+    self.screen = pygame.display.set_mode((800,600))
     self.width, self.height = pygame.display.get_window_size()
     
     #Models
-    self.magic_ring = Button(color = (200,0,200), text = "MR") # Red
-    self.chain_one = Button(color = (0,255,0), text = "Chain 1") #Green
-    self.double_stitch = Button(color = (255,165,0), text = "Double") #Orange
-    self.treble_stitch = Button(color = (0,128,128), text = "Treble") #Aqua    
+    self.magic_ring = Button(color = (200,0,200), text = "MR", position = (50,50)) # Red
+    self.chain_one = Button(color = (0,255,0), text = "Chain 1", position = (50,150)) #Green
+    self.double_stitch = Button(color = (255,165,0), text = "Double", position = (50,250)) #Orange
+    self.treble_stitch = Button(color = (0,128,128), text = "Treble", position = (50,350)) #Aqua    
     
-    self.stitch = Stitch()
-    self.user = Hook(0,0)
+    self.stitch = Stitch(20,30)
     self.sprites = pygame.sprite.Group((self.stitch))
-    
+    #self.user = Hook()
     self.state = "START"
     
   def mainloop(self):
@@ -39,7 +38,7 @@ class Controller:
 
   def startloop(self): #where the player presses start; will use pygame menu
       self.menu = pygame_menu.Menu("Yarning for More!", self.width-20, self.height/2)
-      self.menu.add.label("Click the button to start", max_char=-1, font_size=14)
+      self.menu.add.label("Ready to begin!", max_char= -1, font_size=18)
       self.menu.add.button('Start', self.start_game, align = pygame_menu.locals.ALIGN_CENTER)
       #Add a background image
       
@@ -59,7 +58,7 @@ class Controller:
   def gameloop(self):
       #event loop
       #Added image
-      background = pygame.image.load('ballyarnbk.jpg')
+      background = pygame.image.load(f"assets/ballyarnbk.jpg")
       
       while self.state == "GAME":
         self.screen.fill((0,0,0))
@@ -68,22 +67,24 @@ class Controller:
         for event in pygame.event.get():
           if event.type == pygame.QUIT:
                     exit()
+          
           elif event.type == pygame.MOUSEBUTTONDOWN:
-            if self.magic_ring:
-              Stitch.add_stit()
-            if self.chain_one:
-              Stitch.add_stit()
-            if self.double_stitch:
-              for i in range(2):
-                Stitch.add_stit()
-            if self.treble_stitch:
-              for i in range(3):
-                Stitch.add_stit
-                
+              if self.magic_ring.is_clicked():
+                  Stitch.add_stit(self)
+                  Stitch.move(self)
+              elif self.chain_one:
+                Stitch.add_stit(self)
+                Stitch.move()
+              elif self.double_stitch:
+                for i in range(2):
+                  Stitch.add_stit(self)
+                  Stitch.move()
+              if self.treble_stitch:
+                for i in range(3):
+                  Stitch.add_stit(self)
+                  Stitch.move()
               
-      #Do I have to use collide or collision so that its noticed by the user pressing on it? 
       
-      #event.pos into collision()  #HAVE TO USE IT (in the controller; models don't have to know other models exist)
       
       #update data
       self.sprites.update()
@@ -91,6 +92,8 @@ class Controller:
       #redraw 
       pygame.display.flip()
           
+  def start_game(self):
+    self.state = "GAME"
     
   def saveprogressloop(self):
   #Work on this

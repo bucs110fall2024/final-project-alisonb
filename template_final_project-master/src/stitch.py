@@ -1,19 +1,26 @@
 import pygame
 
 class Stitch(pygame.sprite.Sprite):
-    def __init__(self, image = f"assets/single-crochet-circle.jpg"):
+    def __init__(self, x, y, image = f"assets/single-crochet-circle.jpg"):
         super().__init__()
-        self.image = pygame.image.load(f"assets/single-crochet-x.jpg")
+        self.image = pygame.image.load(image)
         self.rect = self.image.get_rect()
-        self.rect.x = 0 
-        self.rect.y = 0
-        is_added = None   
+        self.rect.x, self.rect.y = x,y
+        self.current_stitch = None
         
-    def add_stit(self):
-        #Doc string (make sure to do)
-        if self.is_added:
-            self.rect.x += 1
-            self.rect.y += 2  
+        
+    def add_stit(self, image = f"assets/single-crochet-x.jpg", x = 1, y =2):
+        """
+        Moving the stitch by a 1 and 2 ixels in x and y directions.
+
+        Args:
+            offset_x (int): The number of pixels to move the sprite in the x direction.
+            offset_y (int): The number of pixels to move the sprite in the y direction.
+        """
+        self.image = pygame.image.load(image)
+        self.rect = self.image.get_rect()
+        self.rect.x += x
+        self.rect.y += y  
             
     def move(self,x,y):
             self.rect.x = x
