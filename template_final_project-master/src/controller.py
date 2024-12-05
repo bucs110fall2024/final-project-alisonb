@@ -66,10 +66,10 @@ class Controller:
         self.rect = background.get_rect()
         self.screen.blit(background, (0,0))
         
-        self.magic_ring.draw(self.screen)
-        self.chain_one.draw(self.screen)
-        self.double_stitch.draw(self.screen)
-        self.treble_stitch.draw(self.screen)
+        #self.magic_ring.draw(self.screen)
+        #self.chain_one.draw(self.screen)
+        #self.double_stitch.draw(self.screen)
+        #self.treble_stitch.draw(self.screen)
         
         for event in pygame.event.get():
           if event.type == pygame.QUIT:

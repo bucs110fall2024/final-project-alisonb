@@ -8,14 +8,13 @@
 
 << List team member names >>
 
-*** Me, myself and I.
+*** Alison Batz (one-woman team)
 
 ## Project Description
 
 << Give an overview of your project >>
 
-***    Crochet game: Player uses buttons 
-                (following instructions provided)
+***    Crochet game: Player uses buttons (selecting based on following instructions provided)
         to create their own mini crochet project (a heart)
 
 ## GUI Design
@@ -32,11 +31,10 @@
 
 ### Features
 
-1. << Menu - Start Button >>
-2. << Game Event - Buttons that correspond to each stitch>>
-3. << Instructions (for the project)>>
-4. << Feature 4 >>
-5. << Feature 5 >>
+1. Menu - Start Button
+2. Game Event - 5 Buttons that correspond to each stitch
+3. Instructions side bar (for the project the user is creating)
+4. Hook (that moves along with the stitch)
 
 ### Classes
 
