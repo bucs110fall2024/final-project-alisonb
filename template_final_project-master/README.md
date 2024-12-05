@@ -44,11 +44,11 @@
 
 ## ATP
 
-| Step                        |Procedure             |Expected Results                   |
-|---------------------------- |:--------------------:|----------------------------------:|
-|1 Press Start Button         | Run Counter Program  |GUI window appears with count = 0  |
-|2 Click MR Button            | click count button   | display changes to count = 1      |
-|3 Click Chain 1 Button       |                      |
-|4 Click Double Stitch Button |
-|5 Click Treble Stitch Button |
+| Step   |Procedure                  |Expected Results                   
+|--------|:------------------------- |------------------------------------------------------
+|1       | Press Start Button        | Starts the game                          
+|2       |Click MR Button            | Creates an image of a oval (represents the magic ring) 
+|3       |Click Chain 1 Button       | Creates an image of a single x (represents one chain)                 
+|4       |Click Double Stitch Button | Creates the images of a two x(s) (represents two chains)
+|5       |Click Treble Stitch Button | Creates the images of three x(s) (represents three chains) 
 etc...
