@@ -47,7 +47,8 @@ class Controller:
         events = pygame.event.get()
         for event in events:
           if event.type == pygame.MOUSEBUTTONDOWN:
-            self.state = "GAME"
+            if self.menu.get_current() == self.menu:
+              self.state = "GAME"
         
         #update data
         self.menu.update(events)
@@ -78,7 +79,6 @@ class Controller:
                   Stitch.add_stit(self)
                   Stitch.move(2,4)
             if self.treble_stitch.is_clicked(mouse_pos):
-                for i in range(3):
                   Stitch.add_stit(self)
                   Stitch.move(3,6)
               
