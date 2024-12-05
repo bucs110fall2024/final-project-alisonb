@@ -105,11 +105,3 @@ class Controller:
       def load_state(self):
          fptr = open("assets/last_state.json")
          self.__dict__ = json.loads(fptr)
-      
-      
-#Logic for the screen; jst a loop for each screen
-#Think of it has different states; what does it look like when its not doing anything
-#When the game is happening, etc 
-      
-# Stitch doesn't have to know about other stitches; the controller should worry
-# Motto: "Worry about yourself"
