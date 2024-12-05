@@ -70,23 +70,30 @@ class Controller:
           elif event.type == pygame.MOUSEBUTTONDOWN:
             mouse_pos = event.pos
             if self.magic_ring.is_clicked(mouse_pos):
-                  Stitch.add_stit(self)
-                  Stitch.move(self)
+                  self.current_stitch == 'magic_ring'
+                  if self.current_stitch == 'magic_ring':
+                    Stitch.add_stit(self)
+                    Stitch.move(self)
             elif self.chain_one.is_clicked(mouse_pos):
-                Stitch.add_stit(self)
-                Stitch.move(1,1)
+                  self.current_stitch == 'chain_one'
+                  if self.current_stitch == 'chain_one':
+                    Stitch.add_stit(self)
+                    Stitch.move(1,1)
             elif self.double_stitch.is_clicked(mouse_pos):
-                  Stitch.add_stit(self)
-                  Stitch.move(2,4)
+                  self.current_stitch == 'double_stitch'
+                  if self.current_stitch == 'double_stitch':
+                    Stitch.add_stit(self)
+                    Stitch.move(2,4)
             if self.treble_stitch.is_clicked(mouse_pos):
-                  Stitch.add_stit(self)
-                  Stitch.move(3,6)
+                  self.current_stitch == 'treble_stitch'
+                  if self.current_stitch == 'treble_stitch':
+                    Stitch.add_stit(self)
+                    Stitch.move(3,6)
               
       #update data
-      self.sprites.update()
-      
+        self.screen.fill((255, 255, 255))  
       #redraw 
-      pygame.display.flip()
+        pygame.display.flip()
           
   def start_game(self):
     self.state = "GAME"
