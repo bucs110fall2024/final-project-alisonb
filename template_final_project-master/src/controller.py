@@ -56,10 +56,8 @@ class Controller:
         pygame.display.flip()
     
   def gameloop(self):
-      #event loop
-      #Added image
       background = pygame.image.load(f"assets/ballyarnbk.jpg")
-      
+       #event loop
       while self.state == "GAME":
         self.screen.fill((0,0,0))
         self.screen.blit(background, (0,0))
@@ -69,22 +67,21 @@ class Controller:
                     exit()
           
           elif event.type == pygame.MOUSEBUTTONDOWN:
-              if self.magic_ring.is_clicked():
+            mouse_pos = event.pos
+            if self.magic_ring.is_clicked(mouse_pos):
                   Stitch.add_stit(self)
                   Stitch.move(self)
-              elif self.chain_one:
+            elif self.chain_one.is_clicked(mouse_pos):
                 Stitch.add_stit(self)
-                Stitch.move()
-              elif self.double_stitch:
-                for i in range(2):
+                Stitch.move(1,1)
+            elif self.double_stitch.is_clicked(mouse_pos):
                   Stitch.add_stit(self)
-                  Stitch.move()
-              if self.treble_stitch:
+                  Stitch.move(2,4)
+            if self.treble_stitch.is_clicked(mouse_pos):
                 for i in range(3):
                   Stitch.add_stit(self)
-                  Stitch.move()
+                  Stitch.move(3,6)
               
-      
       #update data
       self.sprites.update()
       
