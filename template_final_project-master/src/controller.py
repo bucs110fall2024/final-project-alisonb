@@ -15,10 +15,10 @@ class Controller:
     self.width, self.height = pygame.display.get_window_size()
     
     #Models
-    self.magic_ring = Button(color = (200,0,200), text = "MR", position = (50,50)) # Red
+    self.magic_ring = Button(color = (200,0,200), text = "MR", position = (0,0)) # Red
     self.chain_one = Button(color = (0,255,0), text = "Chain 1", position = (50,150)) #Green
     self.double_stitch = Button(color = (255,165,0), text = "Double", position = (50,250)) #Orange
-    self.treble_stitch = Button(color = (0,128,128), text = "Treble", position = (50,350)) #Aqua    
+    self.treble_stitch = Button(color = (0,128,128), text = "Treble", position = (400,550)) #Aqua    
     
     self.stitch = Stitch(20,30)
     self.sprites = pygame.sprite.Group((self.stitch))
@@ -86,20 +86,20 @@ class Controller:
                   self.current_stitch = 'chain_one'
                   if self.current_stitch == 'chain_one':
                     Stitch.add_stit(self)
-                    Stitch.move(1,1)
+                    Stitch.move(self,1,1)
             elif self.double_stitch.is_clicked(mouse_pos):
                   self.current_stitch = 'double_stitch'
                   if self.current_stitch == 'double_stitch':
                     Stitch.add_stit(self)
-                    Stitch.move(2,4)
+                    Stitch.move(self,2,4)
             if self.treble_stitch.is_clicked(mouse_pos):
                   self.current_stitch = 'treble_stitch'
                   if self.current_stitch == 'treble_stitch':
                     Stitch.add_stit(self)
-                    Stitch.move(3,6)
+                    Stitch.move(self,3,6)
               
       #update data
-            
+          self.sprites.draw(self.screen) 
       #redraw 
           pygame.display.flip()
           

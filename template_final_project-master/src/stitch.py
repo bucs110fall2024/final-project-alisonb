@@ -9,7 +9,7 @@ class Stitch(pygame.sprite.Sprite):
 
         
         
-    def add_stit(self, image = f"assets/single-crochet-x.jpg", x = 1, y =2):
+    def add_stit(self, image = f"assets/single-crochet-x.jpg"):
         """
         Moving the stitch by a 1 and 2 ixels in x and y directions.
 
@@ -19,8 +19,6 @@ class Stitch(pygame.sprite.Sprite):
         """
         self.image = pygame.image.load(image)
         self.rect = self.image.get_rect()
-        self.rect.x += x
-        self.rect.y += y  
             
     def move(self,x,y):
             self.rect.x = x
