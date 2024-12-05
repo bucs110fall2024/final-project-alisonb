@@ -6,17 +6,9 @@ class Stitch(pygame.sprite.Sprite):
         self.image = pygame.image.load(image)
         self.rect = self.image.get_rect()
         self.rect.x, self.rect.y = x,y
-
-        
-        
+ 
+        #Make x and y coincide with the string of yarn
     def add_stit(self, image = f"assets/single-crochet-x.jpg"):
-        """
-        Moving the stitch by a 1 and 2 ixels in x and y directions.
-
-        Args:
-            offset_x (int): The number of pixels to move the sprite in the x direction.
-            offset_y (int): The number of pixels to move the sprite in the y direction.
-        """
         self.image = pygame.image.load(image)
         self.rect = self.image.get_rect()
             
@@ -27,3 +19,4 @@ class Stitch(pygame.sprite.Sprite):
     #Every time the player presses the button, it'll "add" and move
     #the stitch in the "magic ring", then it'll come together at the end
         
+    #Make it move 5 to the x, 1 to y 

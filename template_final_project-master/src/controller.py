@@ -63,6 +63,7 @@ class Controller:
       while self.state == "GAME":
         self.screen.fill((0,0,0))
         background = pygame.image.load(f"assets/ballyarnbk.jpg")
+        background = pygame.transform.scale(background, (800,600)) 
         self.rect = background.get_rect()
         self.screen.blit(background, (0,0))
         
@@ -80,8 +81,7 @@ class Controller:
             if self.magic_ring.is_clicked(mouse_pos):
                   self.current_stitch = 'magic_ring'
                   if self.current_stitch == 'magic_ring':
-                    Stitch.add_stit(self)
-                    Stitch.move(self,1,1)
+                    Stitch(self)
             elif self.chain_one.is_clicked(mouse_pos):
                   self.current_stitch = 'chain_one'
                   if self.current_stitch == 'chain_one':
