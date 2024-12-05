@@ -22,6 +22,7 @@ class Controller:
     
     self.stitch = Stitch(20,30)
     self.sprites = pygame.sprite.Group((self.stitch))
+    self.current_stitch = None
     #self.user = Hook()
     self.state = "START"
     
@@ -57,11 +58,18 @@ class Controller:
         pygame.display.flip()
     
   def gameloop(self):
-      background = pygame.image.load(f"assets/ballyarnbk.jpg")
+      
        #event loop
       while self.state == "GAME":
         self.screen.fill((0,0,0))
+        background = pygame.image.load(f"assets/ballyarnbk.jpg")
+        self.rect = background.get_rect()
         self.screen.blit(background, (0,0))
+        
+        self.magic_ring.draw(self.screen)
+        self.chain_one.draw(self.screen)
+        self.double_stitch.draw(self.screen)
+        self.treble_stitch.draw(self.screen)
         
         for event in pygame.event.get():
           if event.type == pygame.QUIT:
@@ -70,30 +78,30 @@ class Controller:
           elif event.type == pygame.MOUSEBUTTONDOWN:
             mouse_pos = event.pos
             if self.magic_ring.is_clicked(mouse_pos):
-                  self.current_stitch == 'magic_ring'
+                  self.current_stitch = 'magic_ring'
                   if self.current_stitch == 'magic_ring':
                     Stitch.add_stit(self)
-                    Stitch.move(self)
+                    Stitch.move(self,1,1)
             elif self.chain_one.is_clicked(mouse_pos):
-                  self.current_stitch == 'chain_one'
+                  self.current_stitch = 'chain_one'
                   if self.current_stitch == 'chain_one':
                     Stitch.add_stit(self)
                     Stitch.move(1,1)
             elif self.double_stitch.is_clicked(mouse_pos):
-                  self.current_stitch == 'double_stitch'
+                  self.current_stitch = 'double_stitch'
                   if self.current_stitch == 'double_stitch':
                     Stitch.add_stit(self)
                     Stitch.move(2,4)
             if self.treble_stitch.is_clicked(mouse_pos):
-                  self.current_stitch == 'treble_stitch'
+                  self.current_stitch = 'treble_stitch'
                   if self.current_stitch == 'treble_stitch':
                     Stitch.add_stit(self)
                     Stitch.move(3,6)
               
       #update data
-        self.screen.fill((255, 255, 255))  
+            
       #redraw 
-        pygame.display.flip()
+          pygame.display.flip()
           
   def start_game(self):
     self.state = "GAME"

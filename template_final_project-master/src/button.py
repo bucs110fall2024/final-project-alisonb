@@ -1,7 +1,7 @@
 import pygame
 
 class Button(pygame.sprite.Sprite):
-    def __init__(self, x=0, y=0, width=175, height=75, color=(200, 0, 200), text= " ", position = (0,0)):
+    def __init__(self, x=0, y=0, width=75, height=75, color=(200, 0, 200), text= " ", position = (0,0)):
         super().__init__()
         self.image = pygame.Surface((width, height))
         self.rect = self.image.get_rect()
@@ -27,7 +27,10 @@ class Button(pygame.sprite.Sprite):
     def color_default(self):
         self.image.fill(self.color)
         self.image.blit(self.message, (20, 20))
-        
+      
+    def draw(self,screen):
+        pygame.draw.rect(screen, self.color, self.rect)  # Draw button 
+    
     def is_clicked(self,pos):
         return self.rect.collidepoint(pos)
         

@@ -6,7 +6,7 @@ class Stitch(pygame.sprite.Sprite):
         self.image = pygame.image.load(image)
         self.rect = self.image.get_rect()
         self.rect.x, self.rect.y = x,y
-        self.current_stitch = None
+
         
         
     def add_stit(self, image = f"assets/single-crochet-x.jpg", x = 1, y =2):
