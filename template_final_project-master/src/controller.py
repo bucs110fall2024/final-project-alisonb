@@ -67,6 +67,11 @@ class Controller:
         self.rect = background.get_rect()
         self.screen.blit(background, (0,0))
         
+        font = pygame.font.Font(None,24)
+        text = font.render("Click Red (Magic Ring) to get started! G = CH1, O = Double, B = Treble", True, (0,0,0))
+        text_rect = text.get_rect()
+        self.screen.blit(text, text_rect)
+        
         pygame.draw.rect(self.screen,(255,5,0), self.magic_ring.rect) #Red
         pygame.draw.rect(self.screen, (0,250,0), self.chain_one.rect) #Green
         pygame.draw.rect(self.screen, (255,165,0), self.double_stitch.rect) #Orange
