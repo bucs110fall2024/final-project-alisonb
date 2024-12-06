@@ -23,7 +23,7 @@ class Controller:
     self.stit_pos = []
     self.current_stitch = None
     self.last_stit_pos = None
-    #self.user = Hook()
+    self.user = Hook()
     self.state = "START"
     
   def mainloop(self):

@@ -20,7 +20,7 @@
 
 ### Initial Design
 
-![initial gui](assets/gui.jpg)
+![initial gui](etc/gui.jpg)
 
 ### Final Design
 
