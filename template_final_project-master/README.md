@@ -14,8 +14,7 @@
 
 << Give an overview of your project >>
 
-***    Crochet game: Player uses buttons (selecting based on following instructions provided)
-        to create their own mini crochet project
+*** Crochet game: Player uses buttons (based on 5 basic stitches) to create their own mini crochet project
 
 ## GUI Design
 
@@ -33,8 +32,7 @@
 
 1. Menu - Start Button
 2. Game Event - 5 Buttons that correspond to each stitch
-3. Instructions side bar (for the project the user is creating)
-4. Hook (that moves along with the stitch)
+3. Hook (that moves along with the stitch)
 
 ### Classes
 
