@@ -20,7 +20,7 @@
 
 ### Initial Design
 
-![initial gui](etc/IMG_CS110_drawing.jpg)
+![initial gui](assets/IMG_CS110_drawing.jpg)
 
 ### Final Design
 
