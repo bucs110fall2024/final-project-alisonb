@@ -23,7 +23,7 @@ class Controller:
     self.stit_pos = []
     self.current_stitch = None
     self.last_stit_pos = None
-    self.user = Hook()
+    self.hook = Hook()
     self.state = "START"
     
   def mainloop(self):
@@ -90,6 +90,7 @@ class Controller:
                     self.stitch.add(new_stitch)
                     self.stit_pos.append((680,480))
                     self.last_stit_pos = (680,480)
+                    self.hook.motion_with_stitch(self.last_stit_pos)
             
             elif self.chain_one.rect.collidepoint(mouse_pos):
                   self.current_stitch = 'chain_one'
@@ -100,7 +101,7 @@ class Controller:
                       new_stitch = Stitch(new_pos[0], new_pos[1])
                       self.stitch.add(new_stitch)
                       self.stit_pos.append(new_pos)
-                      self.last_stit_pos = new_pos          
+                      self.last_stit_pos = new_pos      
             
             elif self.double_stitch.rect.collidepoint(mouse_pos):
                   self.current_stitch = 'double_stitch'
