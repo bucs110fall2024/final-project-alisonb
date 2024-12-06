@@ -104,7 +104,7 @@ class Controller:
                     for i in range(2):
                       if self.last_stit_pos:
                         x, y = self.last_stit_pos
-                        new_pos = (x, y - 20)
+                        new_pos = (x - 10, y - 20)
                         new_stitch = Stitch(new_pos[0], new_pos[1])
                         self.stitch.add(new_stitch)
                         self.stit_pos.append(new_pos)
@@ -116,7 +116,7 @@ class Controller:
                     for i in range(3):
                       if self.last_stit_pos:
                         x, y = self.last_stit_pos
-                        new_pos = (x, y - 20)
+                        new_pos = (x-15, y - 20)
                         new_stitch = Stitch(new_pos[0], new_pos[1])
                         self.stitch.add(new_stitch)
                         self.stit_pos.append(new_pos)
