@@ -1,7 +1,7 @@
 import pygame
 
 class Hook(pygame.sprite.Sprite):
-    def __init__(self, x = 20, y = 20, image = f"assets/hook-img.jpg"):
+    def __init__(self, x = 800, y = 600, image = f"assets/hook-img.jpg"):
         super().__init__()
         self.image = pygame.image.load(image)
         self.rect = self.image.get_rect()

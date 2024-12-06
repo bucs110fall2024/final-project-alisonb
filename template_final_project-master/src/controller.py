@@ -77,10 +77,8 @@ class Controller:
         pygame.draw.rect(self.screen, (255,165,0), self.double_stitch.rect) #Orange
         pygame.draw.rect(self.screen, (0,128,128), self.treble_stitch.rect) #Aqua
         
-        
         self.hook.image = pygame.transform.scale(self.hook.image, (150,200))
-        self.screen.blit(self.hook.image, (690,480))
-        
+     
         for event in pygame.event.get():
           if event.type == pygame.QUIT:
                     exit()
@@ -94,7 +92,7 @@ class Controller:
                     self.stitch.add(new_stitch)
                     self.stit_pos.append((680,480))
                     self.last_stit_pos = (680,480)
-                    #self.hook.motion_with_stitch(new_stitch,480)
+                    self.hook.motion_with_stitch(680,480)
             
             elif self.chain_one.rect.collidepoint(mouse_pos):
                   self.current_stitch = 'chain_one'
@@ -102,10 +100,11 @@ class Controller:
                     if self.last_stit_pos:
                       x, y = self.last_stit_pos
                       new_pos = (x, y - 60)
-                      new_stitch = Stitch(new_pos[0], new_pos[1])
+                      new_stitch = Stitch(new_pos[0]+25, new_pos[1]+15)
                       self.stitch.add(new_stitch)
                       self.stit_pos.append(new_pos)
-                      self.last_stit_pos = new_pos      
+                      self.last_stit_pos = new_pos
+                      self.hook.motion_with_stitch(new_pos[0]+25,new_pos[1]+15)     
             
             elif self.double_stitch.rect.collidepoint(mouse_pos):
                   self.current_stitch = 'double_stitch'
@@ -117,7 +116,8 @@ class Controller:
                         new_stitch = Stitch(new_pos[0], new_pos[1])
                         self.stitch.add(new_stitch)
                         self.stit_pos.append(new_pos)
-                        self.last_stit_pos = new_pos 
+                        self.last_stit_pos = new_pos
+                        self.hook.motion_with_stitch(new_pos[0]+25,new_pos[1]+15) 
             
             elif self.treble_stitch.rect.collidepoint(mouse_pos):
                   self.current_stitch = 'treble_stitch'
@@ -130,9 +130,11 @@ class Controller:
                         self.stitch.add(new_stitch)
                         self.stit_pos.append(new_pos)
                         self.last_stit_pos = new_pos 
+                        self.hook.motion_with_stitch(new_pos[0] + 25,new_pos[1]+15)
               
       #update data
-          self.stitch.draw(self.screen) 
+          self.stitch.draw(self.screen)
+          self.screen.blit(self.hook.image, (self.hook.rect.x, self.hook.rect.y)) 
       #redraw 
           pygame.display.flip()
           
