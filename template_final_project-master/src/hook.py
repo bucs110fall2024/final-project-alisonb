@@ -11,7 +11,9 @@ class Hook(pygame.sprite.Sprite):
         self.hook_moves = None
 
     def motion_with_stitch(self,x,y):
+        """
+        description: Updates the position of the hook (in relation to the stitches; in the controller)
+        argument: x (takes an integer) and y (takes an integer) as its new coordinates
+        return: None
+        """
         self.rect.x, self.rect.y = x, y
-    
-
-#pass coordinates of the needle
