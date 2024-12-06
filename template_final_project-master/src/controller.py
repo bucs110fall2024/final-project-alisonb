@@ -77,6 +77,7 @@ class Controller:
         pygame.draw.rect(self.screen, (255,165,0), self.double_stitch.rect) #Orange
         pygame.draw.rect(self.screen, (0,128,128), self.treble_stitch.rect) #Aqua
         
+        
         self.hook.image = pygame.transform.scale(self.hook.image, (150,200))
      
         for event in pygame.event.get():
