@@ -15,9 +15,4 @@ class Hook(pygame.sprite.Sprite):
             self.rect.y = stitch_sprite.rect.y
     
 
-
-
 #pass coordinates of the needle
-
-#Should the needle know where the stitch is? (Either in the control or as a method); how would I pass the coordinates
-#https://www.pygame.org/docs/ref/sprite.html
