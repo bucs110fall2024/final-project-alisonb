@@ -1,6 +1,5 @@
 import pygame
 import pygame_menu
-import json
 from src.button import Button
 from src.hook import Hook
 from src.stitch import Stitch
@@ -129,15 +128,3 @@ class Controller:
           
   def start_game(self):
     self.state = "GAME"
-    
-  def saveprogressloop(self):
-
-      #update data
-      def save_state(self):
-        stitch_state = self.__dict__
-        fptr = open("assets/last_state.json", "w")
-        json.dump(fptr, stitch_state)
-      #redraw
-      def load_state(self):
-         fptr = open("assets/last_state.json")
-         self.__dict__ = json.loads(fptr)
