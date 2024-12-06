@@ -24,7 +24,7 @@
 
 ### Final Design
 
-![final gui](assets/finalgui.jpg)
+![final gui](assets/gui_in_action.jpg)(assets/gui_initial.jpg)(assets/menu_screen.jpg)
 
 ## Program Design
 
