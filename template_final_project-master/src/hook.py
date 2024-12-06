@@ -2,12 +2,12 @@ import pygame
 from src.stitch import Stitch
 
 class Hook(pygame.sprite.Sprite):
-    def __init__(self, image, x, y):
+    def __init__(self, image):
         super().__init__()
         self.image = pygame.image.load(f"/assets/hook-img.jpg")
         self.rect = self.image.get_rect()
-        self.rect.x = x
-        self.rect.y = y
+        self.rect.x = 0
+        self.rect.y = 0
         hook_moves = None
 
     def motion_with_stitch(self):

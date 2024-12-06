@@ -15,14 +15,15 @@ class Controller:
     self.width, self.height = pygame.display.get_window_size()
     
     #Models
-    self.magic_ring = Button(x = 600, y = 100,color = (200,0,200), text = "MR") # Red
-    self.chain_one = Button(x = 600, y = 200, color = (0,255,0), text = "Chain 1") #Green
-    self.double_stitch = Button(x = 600, y = 300, color = (255,165,0), text = "Double") #Orange
-    self.treble_stitch = Button(x = 600, y= 400,color = (0,128,128), text = "Treble") #Aqua    
+    self.magic_ring = Button(x = 400, y = 100, text = "MR")
+    self.chain_one = Button(x = 500, y = 100, text = "Chain 1") 
+    self.double_stitch = Button(x = 600, y = 100, text = "Double") 
+    self.treble_stitch = Button(x = 700, y= 100, text = "Treble")   
     
-    self.stitch = Stitch(20,30)
-    self.sprites = pygame.sprite.Group((self.stitch))
+    self.stitch = pygame.sprite.Group()   #I had self-stitch in there
+    self.stit_pos = []
     self.current_stitch = None
+    self.last_stit_pos = None
     #self.user = Hook()
     self.state = "START"
     
@@ -67,12 +68,10 @@ class Controller:
         self.rect = background.get_rect()
         self.screen.blit(background, (0,0))
         
-        pygame.draw.rect(self.screen,(255,5,0), self.magic_ring.rect)
-        pygame.draw.rect(self.screen, (0,250,0), self.chain_one.rect)
-        #self.chain_one.draw(self.screen)
-        #self.double_stitch.draw(self.screen)
-        #self.treble_stitch.draw(self.screen)
-        
+        pygame.draw.rect(self.screen,(255,5,0), self.magic_ring.rect) #Red
+        pygame.draw.rect(self.screen, (0,250,0), self.chain_one.rect) #Green
+        pygame.draw.rect(self.screen, (255,165,0), self.double_stitch.rect) #Orange
+        pygame.draw.rect(self.screen, (0,128,128), self.treble_stitch.rect) #Aqua
         
         for event in pygame.event.get():
           if event.type == pygame.QUIT:
@@ -84,26 +83,47 @@ class Controller:
                   self.current_stitch = 'magic_ring'
                   if self.current_stitch == 'magic_ring':
                     new_stitch = Stitch(680,480)
-                    self.sprites.add(new_stitch)    #I'm not gonna use the magic ring any more; this is done
+                    self.stitch.add(new_stitch)
+                    self.stit_pos.append((680,480))
+                    self.last_stit_pos = (680,480)
+            
             elif self.chain_one.rect.collidepoint(mouse_pos):
                   self.current_stitch = 'chain_one'
                   if self.current_stitch == 'chain_one':
-                    Stitch.move(self,1,1)
-                    new_stitch = Stitch(680,420)
-                    self.sprites.add(new_stitch)
+                    if self.last_stit_pos:
+                      x, y = self.last_stit_pos
+                      new_pos = (x, y - 60)
+                      new_stitch = Stitch(new_pos[0], new_pos[1])
+                      self.stitch.add(new_stitch)
+                      self.stit_pos.append(new_pos)
+                      self.last_stit_pos = new_pos          
+            
             elif self.double_stitch.rect.collidepoint(mouse_pos):
                   self.current_stitch = 'double_stitch'
                   if self.current_stitch == 'double_stitch':
-                    Stitch.other_stit(self)
-                    Stitch.move(self,2,4)
-            if self.treble_stitch.rect.collidepoint(mouse_pos):
+                    for i in range(2):
+                      if self.last_stit_pos:
+                        x, y = self.last_stit_pos
+                        new_pos = (x, y - 20)
+                        new_stitch = Stitch(new_pos[0], new_pos[1])
+                        self.stitch.add(new_stitch)
+                        self.stit_pos.append(new_pos)
+                        self.last_stit_pos = new_pos 
+            
+            elif self.treble_stitch.rect.collidepoint(mouse_pos):
                   self.current_stitch = 'treble_stitch'
                   if self.current_stitch == 'treble_stitch':
-                    Stitch.other_stit(self)
-                    Stitch.move(self,3,6)
+                    for i in range(3):
+                      if self.last_stit_pos:
+                        x, y = self.last_stit_pos
+                        new_pos = (x, y - 20)
+                        new_stitch = Stitch(new_pos[0], new_pos[1])
+                        self.stitch.add(new_stitch)
+                        self.stit_pos.append(new_pos)
+                        self.last_stit_pos = new_pos 
               
       #update data
-          self.sprites.draw(self.screen) 
+          self.stitch.draw(self.screen) 
       #redraw 
           pygame.display.flip()
           
