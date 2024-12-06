@@ -1,7 +1,7 @@
 import pygame
 
 class Hook(pygame.sprite.Sprite):
-    def __init__(self, x = 680, y = 480, image = f"assets/hook-img.jpg"):
+    def __init__(self, x = 20, y = 20, image = f"assets/hook-img.jpg"):
         super().__init__()
         self.image = pygame.image.load(image)
         self.rect = self.image.get_rect()
@@ -9,9 +9,8 @@ class Hook(pygame.sprite.Sprite):
         self.rect.y = y
         self.hook_moves = None
 
-    def motion_with_stitch(self,stitch_sprite):
-            self.rect.x = stitch_sprite.rect.x
-            self.rect.y = stitch_sprite.rect.y
+    def motion_with_stitch(self,x,y):
+        self.rect.x, self.rect.y = x, y
     
 
 #pass coordinates of the needle

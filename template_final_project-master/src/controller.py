@@ -77,6 +77,10 @@ class Controller:
         pygame.draw.rect(self.screen, (255,165,0), self.double_stitch.rect) #Orange
         pygame.draw.rect(self.screen, (0,128,128), self.treble_stitch.rect) #Aqua
         
+        
+        self.hook.image = pygame.transform.scale(self.hook.image, (150,200))
+        self.screen.blit(self.hook.image, (690,480))
+        
         for event in pygame.event.get():
           if event.type == pygame.QUIT:
                     exit()
@@ -90,7 +94,7 @@ class Controller:
                     self.stitch.add(new_stitch)
                     self.stit_pos.append((680,480))
                     self.last_stit_pos = (680,480)
-                    self.hook.motion_with_stitch(self.last_stit_pos)
+                    #self.hook.motion_with_stitch(new_stitch,480)
             
             elif self.chain_one.rect.collidepoint(mouse_pos):
                   self.current_stitch = 'chain_one'
