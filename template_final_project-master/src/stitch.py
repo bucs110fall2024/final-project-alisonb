@@ -1,16 +1,18 @@
 import pygame
 
 class Stitch(pygame.sprite.Sprite):
-    def __init__(self, x, y, image = f"assets/single-crochet-circle.jpg"):
+    def __init__(self, x , y , image = f"assets/single-crochet-circle.jpg"):
         super().__init__()
         self.image = pygame.image.load(image)
         self.rect = self.image.get_rect()
         self.rect.x, self.rect.y = x,y
  
         #Make x and y coincide with the string of yarn
-    def add_stit(self, image = f"assets/single-crochet-x.jpg"):
+    def other_stit(self, x, y, image = f"assets/single-crochet-x.jpg"):
         self.image = pygame.image.load(image)
         self.rect = self.image.get_rect()
+        self.rect.x, self.rect.y = x -5,y -5
+        
             
     def move(self,x,y):
             self.rect.x = x
