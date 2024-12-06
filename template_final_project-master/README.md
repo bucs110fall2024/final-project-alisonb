@@ -37,6 +37,9 @@
 ### Classes
 
 - << You should have a list of each of your classes with a description >>
+- Button Class (creates a button)
+- Stitch Class (the image of the stitch, its intial position)
+- Hook Class (image of the hook, linked movement to the stitches)
 
 ## ATP
 
