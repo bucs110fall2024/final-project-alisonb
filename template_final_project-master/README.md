@@ -45,7 +45,7 @@
 
 | Step   |Procedure                  |Expected Results                   
 |--------|:------------------------- |------------------------------------------------------
-|1       | Press Start Button        | Starts the game                          
+|1       |Press Start Button        | Starts the game                          
 |2       |Click MR Button            | Creates an image of a oval (represents the magic ring) 
 |3       |Click Chain 1 Button       | Creates an image of a single oval (represents one chain)                 
 |4       |Click Double Stitch Button | Creates the images of a two ovals (represents two chains)
